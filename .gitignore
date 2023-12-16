@@ -1,5 +1,4 @@
 # .gitignore
-models/
 
 # Ignore Python virtual environments
 venv/
