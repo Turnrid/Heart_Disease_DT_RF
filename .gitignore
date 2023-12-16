@@ -1,0 +1,31 @@
+# .gitignore
+models/
+
+# Ignore Python virtual environments
+venv/
+projEnv/
+*.venv
+*.pyc
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore build and distribution directories
+dist/
+build/
+
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore other files that may contain sensitive information
+*.log
+*.sql
+*.sqlite
+
+# Ignore all .env files
+*.env

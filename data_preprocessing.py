@@ -1,7 +1,6 @@
 import numpy as np
-import pandas as pd
+import joblib
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 from ucimlrepo import fetch_ucirepo
 from imblearn.over_sampling import SMOTE
@@ -37,3 +36,16 @@ def apply_smote(X_train, y_train):
     smote = SMOTE()
     X_train_smote, y_train_smote = smote.fit_resample(X_train, y_train)
     return X_train_smote, y_train_smote
+
+def save_models(best_models):
+    for model in best_models:
+        model_name = model[2]
+        model_estimator = model[0]
+        filename = f"models/model_{model_name}.joblib"
+        joblib.dump(model_estimator, filename)
+
+
+def load_models(filename):
+    model_estimator = joblib.load(filename)
+    return model_estimator
+
